@@ -1,0 +1,27 @@
+{
+  "name": "rep",
+  "version": "0.0.1",
+  "main": "bin/rep",
+  "repository": "https://github.com/brad-f/rep.git",
+  "author": "Brad Fitzwater <brad.fitzwater@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "server": "./bin/rep server",
+    "test": "mocha ./server/routesTest.js --require support/unit.js"
+  },
+  "engines": {
+    "node": "8.1.3"
+  },
+  "dependencies": {
+    "bunyan": "^1.8.10",
+    "express": "^4.15.3",
+    "yargs": "^8.0.2"
+  },
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "mocha": "^3.4.2",
+    "sinon": "^2.3.6",
+    "sinon-chai": "^2.11.0",
+    "supertest": "^3.0.0"
+  }
+}

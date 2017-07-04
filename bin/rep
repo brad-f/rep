@@ -1,0 +1,20 @@
+#!/usr/bin/env node
+
+const yargs = require('yargs');
+
+const log = require('../lib/log');
+const server = require('../server');
+
+const argv = yargs.argv;
+
+const NAME = 'rep';
+const COMMAND = argv._[0];
+
+log.initialize({ name: NAME, command: COMMAND });
+
+if(COMMAND === 'server') {
+  return server();
+} else {
+  log.fatal('unrecongized command');
+  process.exit(1);
+}
