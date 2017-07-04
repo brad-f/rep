@@ -1,0 +1,15 @@
+express:
+  image: "mhart/alpine-node:8.1.3"
+  command: "yarn run server"
+  working_dir: /var/rep
+  volumes:
+    - .:/var/rep
+  ports:
+    - 3000:3000
+
+proxy:
+  build: "./proxy"
+  links:
+    - express
+  ports:
+    - 80:80
